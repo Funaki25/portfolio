@@ -1,4 +1,25 @@
 <div class=" ro flex flex-col items-center justify-center h-dvh  bg-gray-50">
-  <h1 class="text-5xl font-bold animate-float text-gray-800">Salut ! Je suis en chantier ⚠👨🏽‍💻</h1>
-  <p class="mt-10">Bientôt dipsonible 😊!</p>
+  <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-bold animate-float text-gray-800">Salut ! Je suis en chantier ⚠👨🏽‍💻</h1>
+  <p class="mt-10">Bientôt disponible 😊!</p>
+
+ <div class="mt-10 flex flex-wrap justify-center gap-6">
+
+  <div class="flex flex-col items-center bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-lg p-6 w-24 sm:w-28 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <span class="text-5xl font-bold text-yellow-500 drop-shadow-sm">{{ days() }}</span>
+    <span class="text-sm font-medium text-gray-500 mt-2 tracking-wide">Jours</span>
+  </div>
+  <div class="flex flex-col items-center bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-lg p-6 w-24 sm:w-28 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <span class="text-5xl font-bold text-yellow-500 drop-shadow-sm">{{ hours() }}</span>
+    <span class="text-sm font-medium text-gray-500 mt-2 tracking-wide">Heures</span>
+  </div>
+  <div class="flex flex-col items-center bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-lg p-6 w-24 sm:w-28 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <span class="text-5xl font-bold text-yellow-500 drop-shadow-sm">{{ minutes() }}</span>
+    <span class="text-sm font-medium text-gray-500 mt-2 tracking-wide">Minutes</span>
+  </div>
+  <div class="flex flex-col items-center bg-gradient-to-b from-white to-gray-50 rounded-2xl shadow-lg p-6 w-24 sm:w-28 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <span class="text-5xl font-bold text-yellow-500 drop-shadow-sm">{{ seconds() }}</span>
+    <span class="text-sm font-medium text-gray-500 mt-2 tracking-wide">Secondes</span>
+  </div>
+</div>
+
 </div>
