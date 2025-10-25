@@ -1,0 +1,58 @@
+<footer class="bg-gray-50 border-t border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Main Footer Content -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center space-x-2 mb-4">
+          <div class="w-8 h-8 bg-black rounded flex items-center justify-center">
+            <span class="text-white font-semibold text-sm">FD</span>
+          </div>
+          <span class="text-xl font-semibold text-gray-900">Funaki da SILVA</span>
+        </div>
+        <p class="text-gray-600 max-w-md">
+          Développeur passionné créant des expériences digitales exceptionnelles.
+          Toujours à la recherche de nouveaux défis et opportunités.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-4">Navigation</h3>
+        <ul class="space-y-2">
+          @for (link of navigationLinks(); track link.href) {
+            <li>
+              <a
+                [href]="link.href"
+                class="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                {{ link.name }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+      <!-- Social -->
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-4">Réseaux</h3>
+        <div class="flex space-x-4">
+          @for (social of socialLinks(); track social.name) {
+            <a
+              [href]="social.url"
+              class="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              [attr.aria-label]="social.name">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path [attr.d]="social.icon"></path>
+              </svg>
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-gray-600 text-sm mb-4 md:mb-0">
+        © 2025 Portfolio. Tous droits réservés.
+      </p>
+    </div>
+  </div>
+</footer>
