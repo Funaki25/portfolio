@@ -1,0 +1,70 @@
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 bg-black rounded flex items-center justify-center">
+          <span class="text-white font-semibold text-sm">FD</span>
+        </div>
+        <span class="text-xl font-semibold text-gray-900">Funaki da SILVA</span>
+      </div>
+      <!-- Navigation Desktop -->
+      <div class="hidden md:flex items-center space-x-8">
+        @for (link of links(); track link.href) {
+          <a
+            [href]="link.href"
+            class="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
+            [class.text-gray-900]="activeLink() === link.href">
+            {{ link.name }}
+          </a>
+        }
+      </div>
+      <!-- CTA Desktop -->
+      <div class="hidden md:block">
+        <button class="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors duration-200">
+          Télécharger Mon CV
+        </button>
+      </div>
+      <!-- Menu Mobile -->
+      <button
+        class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+        (click)="toggleMobileMenu()">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          @if (!mobileMenuOpen()) {
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          }
+          @if (mobileMenuOpen()) {
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12" />
+          }
+        </svg>
+      </button>
+    </div>
+    <!-- Menu Mobile Dropdown -->
+    @if (mobileMenuOpen()) {
+      <div class="md:hidden py-4 border-t border-gray-200">
+        <div class="flex flex-col space-y-4">
+          @for (link of links(); track link.href) {
+            <a
+              [href]="link.href"
+              class="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium py-2"
+              [class.text-gray-900]="activeLink() === link.href"
+              (click)="closeMobileMenu()">
+              {{ link.name }}
+            </a>
+          }
+          <button class="bg-black text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors duration-200 w-full mt-4">
+            Me contacter
+          </button>
+        </div>
+      </div>
+    }
+  </nav>
+</header>
