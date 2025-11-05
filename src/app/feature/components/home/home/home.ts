@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ProjectExplorer } from '../project-explorer/project-explorer';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ ProjectExplorer],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
