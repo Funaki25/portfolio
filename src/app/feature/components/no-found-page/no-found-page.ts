@@ -8,7 +8,7 @@ import { Component, OnDestroy, NgZone , signal, ChangeDetectionStrategy } from '
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NoFoundPageComponent implements OnDestroy {
-  private readonly targetDate = new Date('2025-11-12T00:00:00+02:00').getTime();
+  private readonly targetDate = new Date('2025-11-30T00:00:00+02:00').getTime();
   protected days = signal(0);
   protected hours = signal(0);
   protected minutes = signal(0);
